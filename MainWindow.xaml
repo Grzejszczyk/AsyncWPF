@@ -1,0 +1,36 @@
+﻿<Window x:Class="AsyncWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+            Async simulator Demo App
+        </TextBlock>
+        <StackPanel Grid.Column="1" Grid.Row="1">
+            <Button x:Name="executeSync" Margin="2" Click="executeSync_Click">Execute Sync</Button>
+            <Button x:Name="executeParallelSync" Margin="2" Click="executeParallelSync_Click">Execute Parallel Sync</Button>
+            <Button x:Name="executeAsync" Margin="2" Click="executeAsync_Click">Execute Async</Button>
+            <Button x:Name="executeAsyncParallel" Margin="2" Click="executeAsyncParallel_Click">Execute Async Parallel</Button>
+            <Button x:Name="executeAsyncParallelV2" Margin="2" Click="executeAsyncParallelV2_Click">Execute Async Parallel with ProgressBar</Button>
+            <Button x:Name="cancelOperation" Margin="2" Click="cancelOperation_Click" >Cancel Operation</Button>
+            
+            <ProgressBar x:Name="progressBar" Minimum="0" Maximum="100" Value="0" Margin="0,10,10,0" Height="15" />
+        </StackPanel>
+        <TextBlock x:Name="resultsTextBlock" Grid.Column="1" Grid.Row="2" Padding="5"></TextBlock>
+    </Grid>
+</Window>
